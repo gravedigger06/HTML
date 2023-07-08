@@ -1,4 +1,4 @@
-S
+
 body {
     font-family: Arial, sans-serif; /* Yazı tipi ailesi */
     font-size: 50px; /* <p></p> etiketindeki ana yazının boyutu */
@@ -6,11 +6,30 @@ body {
     color: #333333; /* Metin rengi */
 }
 
-h1 {
-    color: #130914; /* Başlık rengi */
-    font-size: 70px; /* Başlık yazı tipi boyutu */
-    font-family: Georgia, serif; /* Başlıkta kullanılan yazı tipi ailesi */
+@keyframes color-change {
+    0% {
+      color: blue;
+    }
+
+    25% {
+        color: rgb(114, 121, 131);
+    }
+  
+    50% {
+      color: red;
+      
+    }
+    75% {
+        color:  rgb(0, 255, 242);
+    }
+
+    100% {
+      color: rgb(199, 199, 199);
+    }
 }
+
+h1:hover { animation: color-change 3s infinite; }
+
 
 h2 {
     color: #130914; /* Başlık rengi */
@@ -20,4 +39,9 @@ h2 {
 
 ol {color: #130914; /* Başlık rengi */
     font-size: 35px; /* Başlık yazı tipi boyutu */
-    font-family: Georgia, serif; /* Başlıkta kullanılan yazı tipi ailesi */} # HTML
+    font-family: Georgia, serif; /* Başlıkta kullanılan yazı tipi ailesi */} 
+
+    h1 {text-align: center;}
+    p {text-align: center;}
+    ol  {text-align: center;}
+    h2 {text-align: center;}
