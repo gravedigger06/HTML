@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Screen Time Widget</title>
+    <style>
+        .widget {
+            background-color: #f2f2f2;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+body {
+    font-family: Arial, sans-serif; /* Yazı tipi ailesi */
+    font-size: 50px; /* <p></p> etiketindeki ana yazının boyutu */
+    background-color: #e9dede; /* Web sayfasının arka plan rengi */
+    color: #333333; /* Metin rengi */
+}
+
+@keyframes color-change {
+    0% {
+      color: blue;
+    }
+
+    25% {
+        color: rgb(114, 121, 131);
+    }
+  
+    50% {
+      color: red;
+      
+    }
+    75% {
+        color:  rgb(0, 255, 242);
+    }
+
+    100% {
+      color: rgb(199, 199, 199);
+    }
+}
+
+h1:hover { animation: color-change 3s infinite; }
+
+
+h2 {
+    color: #130914; /* Başlık rengi */
+    font-size: 50px; /* Başlık yazı tipi boyutu */
+    font-family: Georgia, serif; /* Başlıkta kullanılan yazı tipi ailesi */
+}
+
+ol {color: #130914; /* Başlık rengi */
+    font-size: 35px; /* Başlık yazı tipi boyutu */
+    font-family: Georgia, serif; /* Başlıkta kullanılan yazı tipi ailesi */} 
+
+    h1 {text-align: center;}
+    p {text-align: center;}
+    ol  {text-align: center;}
+    h2 {text-align: center;}
+    </style>
+    <script>
+        // Function to calculate the screen time
+        function calculateScreenTime() {
+            // Get the current time
+            var currentTime = new Date().getTime();
+
+            // Get the stored start time from localStorage
+            var startTime = localStorage.getItem("screenTimeStart");
+
+            // If the start time is not stored, set the current time as the start time
+            if (!startTime) {
+                localStorage.setItem("screenTimeStart", currentTime);
+                return 0;
+            }
+
+            // Calculate the difference between the current time and the start time
+            var timeDiff = currentTime - startTime;
+
+            // Convert the time difference from milliseconds to seconds
+            var screenTime = Math.floor(timeDiff / 1000);
+
+            return screenTime;
+        }
+
+        // Function to update the widget with the screen time
+        function updateWidget() {
+            var screenTime = calculateScreenTime();
+            var widgetElement = document.getElementById("screenTimeWidget");
+            widgetElement.innerHTML = "Your Screen Time: " + screenTime + " seconds";
+        }
+
+        // Reset the screen time when the page is closed
+        window.addEventListener("unload", function() {
+            localStorage.removeItem("screenTimeStart");
+        });
+
+        // Update the widget every second
+        setInterval(updateWidget, 1000);
+    </script>   
+
+<div class="widget" id="screenTimeWidget">
+    Loading...
+</div>
+
+    <title>Teknoloji Bağımlılğını Yakından Tanıyalım</title>
+</head>
+<body> 
+    <h1>Teknoloji Bağımlılığı Nedir</h1>
+    <p>Bu, bir kişinin belirli teknolojiler ve cihazlar olmadan yapamadığı bir bağımlılık türüdür.
+      Bu teknolojilere olan aşırı bağımlılık kişinin fonksiyonel yeteneklerini önemli ölçüde köreltebilir. Bu da yaşam kalitesi üzerinde ciddi olumsuz etkilere neden olabilir.</p>
+
+      <center><img src="https://c8.alamy.com/comp/2ER9JT0/network-addiction-of-a-teenager-smartphone-octopus-2ER9JT0.jpg" alt="centered image" height="598" width="800"> </center>
+
+    <h2>Peki Dünya Üzerinde Görülen En Yaygın Teknoloji Bağımlılığı Hastalıkları Nelerdir?</h2>
+
+            <ol>
+                  <li>Sosyal medya ve mesajlaşma: İnsanlar sosyal medyada ve mesajlaşma uygulamalarında çok fazla zaman harcayarak gerçek dünyada geçirdikleri zamanı azaltabilirler. Dahası, bu durum haber ve mesaj güncellemelerine bağımlılığa yol açar.</li>
+                  &nbsp; 
+                  <li>Akıllı telefonlar ve tabletler: Akıllı telefonlar ve tabletler insanlar için dünyayla iletişim kurmanın temel yolu haline gelebilir ve insanlar bildirimleri sürekli kontrol etme, retweet yapma ve sosyal medya ve mesajlaşma uygulamalarında gezinme konusunda bağımlı hale gelebilirler.
+                  </li>
+                  &nbsp; 
+                  <li>Oyunlar ve çevrimiçi eğlence: Oyunlar ve çevrimiçi eğlence bağımlılık yapabilir, bu da insanların gerçek hayat yerine sanal dünyada çok fazla zaman harcamalarına neden olabilir.
+                  </li>
+                  &nbsp; 
+                  <li>Akıllı ev cihazları:Kripto paralar ve blok zincirleri: İnsanlar, finansal istikrarlarını riske atan kripto para biriktirmeye bağımlı hale gelebilirler.
+                        Bunun yanı sıra, bazı insanlar blok zinciri teknolojisiyle aşırı derecede büyülenebilirler. Örneğin, çok fazla zamanlarını ticaret platformlarında ve tartışma gruplarında geçirebilirler veya kripto paralara çok fazla para yatırabilirler, bu da maddi sorunlara ve gerçek dünyada ilgi kaybına yol açabilir. Bu sorunlardan kaçınmak için, kripto paralara ve blok zinciri teknolojisine olan bağımlılığınızın farkında olmak ve onu ölçülü ve akıllıca kullanmak önemlidir.</li>
+            </ol>
+            <center><img src="https://tenneyschool.com/wp-content/uploads/2017/05/technologyaddiction.jpg" alt="centered image" height="598" width="800"> </center>
+
+      <h3>Teknoloji bağımlılığıyla nasıl mücadele edebiliriz?</h3>
+      
+      <li>İnternet ve cihazlarınızda geçirdiğiniz zamanı sınırlayın.</li>
+      &nbsp; 
+      <li>Teknoloji kullanımı dışında çeşitli ilgi alanları ve aktiviteler edinin.</li>
+      &nbsp; 
+      <li>Sosyal medya ve mesajlaşma uygulamalarına olan bağımlılığınızı azaltmak için çevrenizle bağlantı kurmanın yeni yollarını arayın.</li>
+      &nbsp; 
+      <li>Mümkünse, bilgisayar başında geçirdiğiniz çalışma süresini sınırlayın ve mola verin. Bu, gözlerinizdeki stresi azaltacak ve bir sonraki çalışma oturumuna geçmeden zihninizin boşalmasına yardımcı olacaktır.</li>
+      &nbsp; 
+      <li>Mümkün olduğunda, teknolojiden uzak geçireceğiniz zaman dilimleri ayarlayarak rahatlamak ve gevşemek için fırsat yaratın.</li>
+      &nbsp; 
+      <li>Teknoloji daha bilinçli kullanmaya çalışın. Arada bir kendinize şu soruyu sorun: Teknolojiye çok mu bağımlı hale geliyorum?</li>
+      <iframe src="https://www.meteoblue.com/tr/hava/widget/daily/ankara_t%c3%bcrkiye_323786?geoloc=fixed&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&precipunit=MILLIMETER&coloured=coloured&pictoicon=0&pictoicon=1&maxtemperature=0&maxtemperature=1&mintemperature=0&mintemperature=1&windspeed=0&windspeed=1&windgust=0&winddirection=0&winddirection=1&uv=0&humidity=0&precipitation=0&precipitation=1&precipitationprobability=0&precipitationprobability=1&spot=0&spot=1&pressure=0&layout=light"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 216px; height: 420px"></iframe><div><!-- DO NOT REMOVE THIS LINK --><a href="https://www.meteoblue.com/tr/hava/hafta/ankara_t%c3%bcrkiye_323786?utm_source=weather_widget&utm_medium=linkus&utm_content=daily&utm_campaign=Weather%2BWidget" target="_blank" rel="noopener">meteoblue</a></div>
+
+      
+</body>
+</html>
